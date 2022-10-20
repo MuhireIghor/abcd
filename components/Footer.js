@@ -9,7 +9,7 @@ import sideFoot from '../public/images/pexels-timur-saglambilek-87223 2.png'
 
 const Footer = () => {
   return (
-    <div className="bg-footerBlue flex flex-col gap-2 absolute bottom-0 w-screen" >
+    <div className="bg-footerBlue flex flex-col gap-2  w-screen" >
       <div className='flex flex-row p-10'>
 
       <div className="flex flex-col basis-1/4 ">
@@ -24,7 +24,7 @@ const Footer = () => {
         <div className='text-white w-[70%] text-sm font-thin  '>
           Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.
         </div>
-        
+
 
 
       </div>
