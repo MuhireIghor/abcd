@@ -1,16 +1,8 @@
-import { Main } from 'next/document'
 import Head from 'next/head'
-import Image from 'next/image'
 import { agents } from '../components/lib/agents'
-import { Pagination } from '../components/Pagination'
 import TopRatedAgent from '../components/topRatedAgent'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
-
-  const topRatedAgents = agents.map((agent, index) => {
-    return <TopRatedAgent agent={agent} />
-  })
 
   return (
     <div className=''>
@@ -24,8 +16,7 @@ export default function Home() {
       </Head>
 
       <main className='p-12'>
-  
-        {<Pagination cards={topRatedAgents}/>}
+       
       </main>
 
     </div>
