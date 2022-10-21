@@ -92,7 +92,7 @@ const BelowNav = () => {
                   nextLabel={
                     <IconButton
                       disabled={
-                        currentPages[index] === contacts.data.length / 2
+                        currentPages[index] + 3 >= contacts.data.length - 1
                       }
                     >
                       <ChevronRight />
@@ -136,7 +136,11 @@ const BelowNav = () => {
             }`}
           >
             <div
-              style={{ backgroundImage: `url(/images/${index > 0 ? "anothergroup.svg" : "group.svg"})` }}
+              style={{
+                backgroundImage: `url(/images/${
+                  index > 0 ? "anothergroup.svg" : "group.svg"
+                })`,
+              }}
               className="w-[35rem] bg-cover h-[35rem]"
             ></div>
             <div className="text-[#232A43]  text-xl items-start flex flex-col gap-6">
@@ -159,7 +163,7 @@ const BelowNav = () => {
                 style={{ background: "#4B6DF3" }}
                 className="flex text-white gap-2 py-2 px-4 font-semibold items-center justify-center"
               >
-                <img src="/images/search.svg"/>
+                <img src="/images/search.svg" />
                 <span>Find an agent</span>
               </Button>
             </div>
