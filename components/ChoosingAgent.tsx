@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { datas } from "../data/belowNav";
 import ReactPaginate from "react-paginate";
 import { Button, Rating } from "@mui/material";
