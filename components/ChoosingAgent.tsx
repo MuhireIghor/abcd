@@ -45,12 +45,16 @@ const BelowNav = () => {
                               <div>
                                 <Rating
                                   name="half-rating-read"
-                                  defaultValue={2.6}
-                                  precision={0.2}
+                                  defaultValue={contact.rating.toString().includes(".") ? contact.rating : contact.rating - 0.2}
+                                  precision={0.5}
                                   readOnly
                                 />
                               </div>
-                              <div>{contact.rating.toString().includes(".") ? contact.rating : contact.rating + ".0"}</div>
+                              <div>
+                                {contact.rating.toString().includes(".")
+                                  ? contact.rating
+                                  : contact.rating + ".0"}
+                              </div>
                             </div>
                           </div>
                           <div className="text-lg">{contact.text}</div>

@@ -17,6 +17,17 @@ module.exports = {
       fontFamily: {
         hiring: "Nanum Pen",
       },
+      colors:{
+        'mainblue':'#4B6DF3',
+        'footerBlue':'#000518',
+        'darkBlue':'#12182D',
+        'orangeFooter':' #F96155',
+        'optGray':'#232A43',
+        'textGray':' #5B6178'
+      },fontFamily:{
+        'hiring':'Nanum Pen'
+      }
+
     },
   },
   plugins: [],
