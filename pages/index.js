@@ -17,7 +17,7 @@ export default function Home() {
       <div>
 
       <main className='p-12'>
-       
+         
       </main>
 
     </div>
