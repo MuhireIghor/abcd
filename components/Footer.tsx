@@ -8,7 +8,7 @@ import sideFoot from "../public/images/pexels-timur-saglambilek-87223 2.png";
 
 const Footer = () => {
   return (
-    <div className="bg-footerBlue flex flex-col gap-2 absolute bottom-0 w-screen">
+    <div className="bg-footerBlue flex flex-col gap-2">
       <div className="flex flex-row p-10">
         <div className="flex flex-col basis-1/4 ">
           <div className="flex flex-row gap-3 ">
