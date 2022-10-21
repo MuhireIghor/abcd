@@ -114,7 +114,7 @@ const BelowNav = () => {
                   Connect with an expert local agent
                 </h1>
                 <h2 className="max-w-[30rem]">
-                  Our agents are here to help you. Let's make your home search
+                  Our agents are here to help you. Let&apos;s make your home search
                   or sale easier.
                 </h2>
               </div>
