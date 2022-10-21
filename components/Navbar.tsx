@@ -21,7 +21,7 @@ const Navbar: FC = () => {
   return (
     <div className="p-8 bg-cover bg-[linear-gradient(0deg,rgba(18,24,45,0.5),rgba(18,24,45,0.5)),url(/images/bg1.png)] opacity-90 flex flex-col h-[80vh]">
       <div
-        className={`flex fixed right-0 top-0 p-3 left-0 justify-between items-center ${
+        className={`flex fixed z-50 right-0 top-0 p-3 left-0 justify-between items-center ${
           bg ? "bg-[black]" : "bg-transparent"
         }`}
       >
