@@ -37,16 +37,16 @@ const Footer = () => {
               if (index == 4) {
                 return (
                   <p key={index} className="text-white hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer ">
-                    {link}{" "}
+                    {link}
                     <span className="text-orangeFooter font-hiring non-italic">
-                      {" "}
-                      We 're hiring
+                     
+                      We &apos;re hiring
                     </span>
                   </p>
                 );
               } else {
                 return (
-                  <p className="text-white  hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer  ">
+                  <p key={index} className="text-white  hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer  ">
                     {link}
                   </p>
                 );
@@ -57,9 +57,9 @@ const Footer = () => {
         <div className="flex flex-col basis-1/4">
           <p className="text-white font-bold mb-4">Agentbook</p>
           <div className="flex flex-col gap-[12px]">
-            {agentBook.map((book) => {
+            {agentBook.map((book, index) => {
               return (
-                <p className="text-white hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer ">
+                <p key={index} className="text-white hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer ">
                   {book}
                 </p>
               );
@@ -69,9 +69,9 @@ const Footer = () => {
         <div className="flex flex-col basis-1/4">
           <p className="text-white font-bold mb-4">Resources</p>
           <div className="flex flex-col gap-[12px]">
-            {resources.map((resource) => {
+            {resources.map((resource, index) => {
               return (
-                <p className="text-white hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer">
+                <p key={index} className="text-white hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer">
                   {resource}
                 </p>
               );
