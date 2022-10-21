@@ -36,7 +36,7 @@ const Footer = () => {
             {links.map((link, index) => {
               if (index == 4) {
                 return (
-                  <p className="text-white hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer ">
+                  <p key={index} className="text-white hover:underline hover:decoration-solid hover:decoration-1 hover:cursor-pointer ">
                     {link}{" "}
                     <span className="text-orangeFooter font-hiring non-italic">
                       {" "}
