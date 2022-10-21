@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
-import { agents } from "../components/lib/agents";
+import { agents } from "../data/agents";
 import TopRatedAgent from "../components/topRatedAgent";
 import BelowNav from "../components/ChoosingAgent";
 import { NextPage } from "next";

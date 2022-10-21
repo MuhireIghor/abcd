@@ -83,7 +83,7 @@ const BelowNav = () => {
                   nextClassName="h-full"
                   nextLinkClassName="h-full items-center flex"
                   previousLinkClassName="h-full items-center flex"
-                  pageLinkClassName="h-full w-full border cursor-pointer px-3 py-2 rounded-md"
+                  pageLinkClassName="h-full w-full border cursor-pointer bg-white text-xl font-bold text-[rgba(0,0,0,0.5)] px-3 py-2 rounded-md"
                   pageCount={contacts.data.length / 4}
                   marginPagesDisplayed={3}
                   nextLabel={<Image height={40} width={40} src="/Next.svg" />}
