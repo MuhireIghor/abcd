@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import { datas } from "../data/belowNav";
 import ReactPaginate from "react-paginate";
 const BelowNav = () => {
-  const [currentPage, setCurrentPage] = useState<number>(0);
-  const pageHandler = (page: { selected: number }): void => {
-    setCurrentPage(page.selected * 4);
+  const [currentPages, setCurrentPages] = useState<number[]>([0, 0]);
+  const pageHandler = (page: { selected: number }, index: number): void => {
+    currentPages[index] = page.selected;
+    setCurrentPages(currentPages);
   };
   return (
     <div className="flex flex-col">
@@ -19,9 +20,9 @@ const BelowNav = () => {
               <h2 className="text-[#777A84] text-xl">{contacts.subtitle}</h2>
             </div>
             <div className="flex items-center flex-col gap-3">
-              <div className="grid py-4 gap-20 w-full grid-cols-1 md:grid-cols-2">
+              <div className="grid py-4 gap-20 w-full grid-cols-1  md:grid-cols-2">
                 {contacts.data
-                  .slice(currentPage, currentPage + 4)
+                  .slice(currentPages[index], currentPages[index] + 4)
                   .map((contact, index) => {
                     return (
                       <div
@@ -55,12 +56,14 @@ const BelowNav = () => {
               {contacts.data.length > 4 && (
                 <ReactPaginate
                   breakLabel="....."
-                  previousLabel={<Image height={40} width={40} src="/Previous.svg"/>}
+                  previousLabel={
+                    <Image height={40} width={40} src="/Previous.svg" />
+                  }
                   pageCount={contacts.data.length / 4}
-                  nextLabel={<Image height={40} width={40} src="/Next.svg"/>}
+                  nextLabel={<Image height={40} width={40} src="/Next.svg" />}
                   pageClassName="border cursor-pointer px-3 py-2 rounded-md"
                   activeClassName="bg-[blue] text-white"
-                  onPageChange={pageHandler}
+                  onPageChange={(selectedItem) => pageHandler(selectedItem, index)}
                   className="bg-transparent flex items-center font-bold gap-5"
                 />
               )}
