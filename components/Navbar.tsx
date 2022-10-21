@@ -5,7 +5,7 @@ import agentGrp from "../public/images/Group 1000001997.png";
 import canadaFlag from "../public/images/flag.png";
 import menu from "../public/images/Vector(7).png";
 import accImg from "../public/images/Ellipse 110.png";
-import search from "../public/images/Vector(8).png";
+import search from "../public/images/Vector(7).png";
 import { FC, useState } from "react";
 const Navbar: FC = () => {
   const [bg, setBg] = useState<Boolean>(false);
