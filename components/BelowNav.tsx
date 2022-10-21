@@ -92,7 +92,7 @@ const BelowNav = () => {
                   nextLabel={
                     <IconButton
                       disabled={
-                        currentPages[index] === contacts.data.length / 2
+                        currentPages[index] + 3 >= contacts.data.length -1
                       }
                     >
                       <ChevronRight />
