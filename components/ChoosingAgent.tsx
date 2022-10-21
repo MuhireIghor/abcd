@@ -2,52 +2,64 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { datas } from "../data/belowNav";
 import ReactPaginate from "react-paginate";
+import { Button, Rating } from "@mui/material";
 const BelowNav = () => {
   const [currentPages, setCurrentPages] = useState<number[]>([0, 0]);
   const pageHandler = (page: { selected: number }, index: number): void => {
-    currentPages[index] = page.selected;
-    setCurrentPages(currentPages);
+    currentPages[index] = page.selected * 4;
+    setCurrentPages([...currentPages]);
   };
+
   return (
     <div className="flex flex-col">
       {datas.map(({ contacts, choose }, index) => (
-        <div key={index} className="flex gap-20 py-5 flex-col">
-          <div className="px-24">
+        <div key={index} className="flex items-center gap-20 py-5 flex-col">
+          <div className="w-fit">
             <div className="flex flex-col gap-3 pt-3 pb-10">
               <h1 className="text-[#232A43] font-extrabold text-[2rem]">
                 {contacts.title}
               </h1>
               <h2 className="text-[#777A84] text-xl">{contacts.subtitle}</h2>
             </div>
-            <div className="flex items-center flex-col gap-3">
-              <div className="grid py-4 gap-20 w-full grid-cols-1  md:grid-cols-2">
+            <div className="flex items-center flex-col gap-10">
+              <div className="grid py-4 gap-14 w-full grid-cols-1  md:grid-cols-2">
                 {contacts.data
                   .slice(currentPages[index], currentPages[index] + 4)
                   .map((contact, index) => {
                     return (
                       <div
                         key={index}
-                        className="flex text-[#232A43] gap-10 max-w-[40rem]"
+                        className="flex text-[#232A43] gap-3 max-w-[38rem]"
                       >
                         <img
                           src={contact.profile}
                           alt={contact.id + contact.username}
                           className="object-cover w-[7rem] h-[7rem]"
                         />
-                        <div className="flex bg-transparent items-end flex-col gap-1">
+                        <div className="flex bg-transparent items-end flex-col gap-5">
                           <div className="flex w-full justify-between">
-                            <div className="font-bold  text-2xl">
+                            <div className="font-extrabold  text-2xl">
                               {contact.username}
                             </div>
-                            <div>{}</div>
+                            <div className="flex  items-center gap-1">
+                              <div>
+                                <Rating
+                                  name="half-rating-read"
+                                  defaultValue={2.6}
+                                  precision={0.2}
+                                  readOnly
+                                />
+                              </div>
+                              <div>{contact.rating.toString().includes(".") ? contact.rating : contact.rating + ".0"}</div>
+                            </div>
                           </div>
-                          <div className="text-md">{contact.text}</div>
-                          <button
-                            type="button"
-                            className="bg-[#4B6DF3] text-white p-3  rounded-md"
+                          <div className="text-lg">{contact.text}</div>
+                          <Button
+                            variant="contained"
+                            style={{ background: "#4B6DF3" }}
                           >
                             Contact agent
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     );
@@ -59,11 +71,18 @@ const BelowNav = () => {
                   previousLabel={
                     <Image height={40} width={40} src="/Previous.svg" />
                   }
+                  previousClassName="h-full"
+                  nextClassName="h-full"
+                  nextLinkClassName="h-full items-center flex"
+                  previousLinkClassName="h-full items-center flex"
+                  pageLinkClassName="h-full w-full border cursor-pointer px-3 py-2 rounded-md"
                   pageCount={contacts.data.length / 4}
+                  marginPagesDisplayed={3}
                   nextLabel={<Image height={40} width={40} src="/Next.svg" />}
-                  pageClassName="border cursor-pointer px-3 py-2 rounded-md"
-                  activeClassName="bg-[blue] text-white"
-                  onPageChange={(selectedItem) => pageHandler(selectedItem, index)}
+                  activeLinkClassName="h-full bg-[blue] text-white border-none"
+                  onPageChange={(selectedItem) =>
+                    pageHandler(selectedItem, index)
+                  }
                   className="bg-transparent flex items-center font-bold gap-5"
                 />
               )}
