@@ -5,4 +5,4 @@ const Latest: FC = () => {
         <div></div>
     )
 }
-export Latest;
+export default Latest;
