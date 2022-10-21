@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { datas } from "../data/belowNav";
+import arrowVect from '../public/images/direct.png';
+import { data } from "../data/house";
 import ReactPaginate from "react-paginate";
 const BelowNav = () => {
   const [currentPages, setCurrentPages] = useState<number[]>([0, 0]);
@@ -39,7 +41,7 @@ const BelowNav = () => {
                             <div className="font-bold  text-2xl">
                               {contact.username}
                             </div>
-                            <div>{}</div>
+                            <div>{ }</div>
                           </div>
                           <div className="text-md">{contact.text}</div>
                           <button
@@ -93,9 +95,8 @@ const BelowNav = () => {
             </div>
           )}
           <div
-            className={`flex items-center justify-center gap-10 ${
-              index > 0 && "flex-row-reverse"
-            }`}
+            className={`flex items-center justify-center gap-10 ${index > 0 && "flex-row-reverse"
+              }`}
           >
             <div
               style={{ backgroundImage: `url(/images/chooseAgent.png)` }}
@@ -125,6 +126,45 @@ const BelowNav = () => {
           </div>
         </div>
       ))}
+      <div className='flex flex-col gap-4'>
+     {data.map((house,index)=>(
+      <>
+      <div >
+{house.title}
+      </div>
+      <div className="flex gap-2">
+        {house.data.map((info,index)=>{
+          return(
+            <div className="flex flex-col gap-2">
+              <div className="flex justify-between">
+                <p>{info.date}</p>
+                <p>{info.time}</p>
+              </div>
+              <div className="">
+                <img src={info.houseImg} alt={info.name} />
+              </div>
+              <div>
+                {info.subtitle}
+              </div>
+              <div className="flex justify-between">
+<div className="flex ">
+  <img  src={info.profile} alt={info.option}/>
+  <p>{info.name}</p>
+</div>
+<div className="flex">
+  {/* <img src= /> */}
+            
+</div>
+              </div>
+
+            </div>
+          )
+        })}
+      </div>
+      </>
+     ))}
+
+      </div>
     </div>
   );
 };
